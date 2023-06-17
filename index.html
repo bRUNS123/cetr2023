@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover"
+    />
+    <meta name="orientation" content="landscape" />
+    <!-- Añade esta línea para establecer la orientación horizontal -->
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="layout.css" />
+    <title>Registro Fotografico CETR</title>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="header">
+        <div class="dropdown">
+          <label for="day-select">Seleccionar día:</label>
+          <select id="day-select" onchange="changeImages2(this.value)">
+            <option value="26.05.23">26 de Mayo de 2023</option>
+            <option value="02.06.23">2 de Junio de 2023</option>
+            <option value="12.06.23">12 de Junio de 2023</option>
+            <option value="16.06.23">16 de Junio de 2023</option>
+          </select>
+        </div>
+      </div>
+      <div class="content1">
+        <div class="background-image">
+          <div class="circles-container" id="myElement">
+            <img
+              src="https://res.cloudinary.com/dkfd7hcwo/image/upload/planos.jpg"
+              alt="Plano Fotografico"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

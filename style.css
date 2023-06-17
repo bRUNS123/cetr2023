@@ -1,0 +1,119 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5vh 95vh; /* Cambio en la definición de filas */
+  gap: 0px 0px;
+  height: 100vh;
+  width: 100vw;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "header"
+    "content";
+}
+.header {
+  background: black;
+  grid-area: header;
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.content1 {
+  background: white;
+  grid-area: content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Evita que la imagen se desborde */
+  padding: 10px;
+}
+
+.background-image {
+  width: calc(100% - 20px); /* Ancho ajustado con margen */
+  height: calc(100% - 20px); /* Altura ajustada con margen */
+  margin: 10px; /* Margen de 10px en todas las direcciones */
+  overflow: hidden; /* Evita que la imagen se desborde */
+}
+
+.background-image img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Ajusta la imagen al contenedor sin deformarla */
+  border-radius: 10px; /* Borde redondeado */
+  border: 2px solid #000; /* Borde de 1px sólido */
+}
+
+.circle {
+  position: absolute;
+  width: 1.7vw;
+  height: 1.7vw;
+  border-radius: 50%;
+  opacity: 0.5;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.circle:hover {
+  opacity: 0.9;
+}
+
+.circles-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  width: 650px; /* Aumento del 20% en el ancho */
+  height: 250px; /* Aumento del 20% en la altura */
+  border: 5px solid black;
+  border-radius: 10px;
+  display: none;
+  z-index: 9999;
+  margin: 10px; /* Margen de 3px en todos los lados */
+}
+
+.lightbox img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.circle:hover + .lightbox {
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  .grid {
+    grid-template-rows: 10vh auto; /* Cambio en la definición de filas para dispositivos móviles */
+  }
+
+  .content1 {
+    flex-direction: column; /* Cambio en la dirección del flexbox para dispositivos móviles */
+  }
+
+  .background-image {
+    margin: 10px auto; /* Centra la imagen horizontalmente en dispositivos móviles */
+  }
+
+  .lightbox {
+    /* position: fixed; */
+    bottom: 10px; /* Ubicación en la esquina inferior izquierda */
+    left: 10px;
+    width: calc(350px); /* Ancho al 100% del viewport */
+    height: calc(100px); /* Altura relativa al ancho del viewport */
+    scroll-snap-align: start;
+    margin: 5px;
+    display: none;
+  }
+
+  .lightbox img {
+    height: 100%; /* Ajusta la imagen al 100% de la altura del lightbox */
+    object-fit: fill; /* Ajusta la imagen para mantener la relación de aspecto */
+  }
+}
