@@ -18,6 +18,24 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.textmenu {
+  color: white;
+  font-size: 1.5vw;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-decoration: none;
+  margin: 0 20px;
+  align-items: center;
+}
+
+.selectday {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  margin: 0 20px;
+  align-items: center;
+}
 .content1 {
   background: white;
   grid-area: content;
